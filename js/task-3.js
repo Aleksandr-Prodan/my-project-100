@@ -43,32 +43,37 @@
 // "Вибачте, але ви маєте ввести значення від 1 до 4 включно".
 // Значення змінної result виведіть в консоль.
 
-const num = Number(prompt(`Ведіть число від 1 до 4:`));
-let result;
-switch (num) {
-    case 1:
-        result = "зима";
-        break;
-    case 2:
-        result = "весна";
-        break;
-    case 3:
-        result = "літо";
-        break;
-    case 4:
-        result = "осінь";
-        break;
-    default:
-        result = "Вибачте, але ви маєте ввести значення від 1 до 4 включно";
-}
-console.log(result);
+// const num = Number(prompt(`Ведіть число від 1 до 4:`));
+// let result;
+// switch (num) {
+//     case 1:
+//         result = "зима";
+//         break;
+//     case 2:
+//         result = "весна";
+//         break;
+//     case 3:
+//         result = "літо";
+//         break;
+//     case 4:
+//         result = "осінь";
+//         break;
+//     default:
+//         result = "Вибачте, але ви маєте ввести значення від 1 до 4 включно";
+// }
+// console.log(result);
 
 // Завдання 4:
 // Отримуйте від користувача число (кількість хвилин) через prompt
 // і виводьте у консоль рядок у форматі годин та хвилин.
 // Приклад: користувач вводить в prompt '70' -> в консолі відобразиться '01:10'.
-// Корисне посилання для відображення годин та хвилин у потрібному форматі ('01' замість '1'): 
+// Корисне посилання для відображення годин та хвилин у потрібному форматі ('01' замість '1'):
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart#examples
+
+// const num = Number(prompt(`Ведіть кількість хвилин:`));
+// const hours = String(Math.floor(num / 60)).padStart(2, '0');
+// const minutes = String(num % 60).padStart(2, '0');
+// console.log(`${hours}:${minutes}`);
 
 // Завдання 5:
 // Напишіть код, який запитуватиме у користувача
@@ -86,30 +91,110 @@ console.log(result);
 // то вивести в alert рядок "Добрий день!",
 // в іншому випадку вивести в alert рядок "Невірний пароль!"
 
+// const login = prompt("Введіть логін:");
+
+// if (login === null || login === "") {
+//   alert("Скасовано");
+// } else if (login === "адмін") {
+//   const password = prompt("Введіть пароль:");
+//   if (password === null || password === "") {
+//     alert("Скасовано");
+//   } else if (password === "Я головний") {
+//     alert("Добрий день!");
+//   } else {
+//     alert("Невірний пароль!");
+//   }
+// } else {
+//   alert("Я вас не знаю");
+// }
+
 // Завдання 6:
 // Використайте цикл while, щоб вивести в console всі числа від 0 до 20 включно.
+// let num = 0;
+// while (num <= 20) {
+//     console.log(num);
+//     num += 1;
+// }
 
 // Завдання 7:
-// Напишіть функцію getNumbers(min, max), що приймає 2 параметри - 
+// Напишіть функцію getNumbers(min, max), що приймає 2 параметри -
 // мінімальне і максимальне число відповідно.
 // Напишіть цикл всередині функції, який виводить у консоль
 // всі числа від max до min за спаданням.
 // Окрім цього, підрахуйте суму всіх парних чисел в цьому циклі
 // і поверніть її з функції.
 
+// function getNumbers(min, max) {
+//     let sum = 0;
+//     for (let i = max; i >= min; i--) {
+//         console.log(i);
+//         if (i % 2 === 0) {
+//             sum += i;
+//         }
+//     }
+//     console.log(sum);
+// }
+// getNumbers(1, 5);
+
 // Завдання 8:
 // Напишіть функцію min(a, b), яка приймає 2 числа і повертає меньше з них.
 // Потрібно додати перевірку, що функція отримує саме числа, в іншому випадку
 // повертати з функції рядок - 'Not a number!'.
 
+// function min(a, b) {
+//   if (typeof a === `number` && typeof b === `number`) {
+//     if (a > b) {
+//       console.log(b);
+//     } else if (a < b) {
+//       console.log(a);
+//     }
+//   } else {
+//     console.log('Not a number!');
+//   }
+// }
+// min(2, `www`);
+
 // Завдання 9:
-// Напишіть функцію isAdult(age), яка  приймає число - вік користувача і повертає true, 
+// Напишіть функцію isAdult(age), яка  приймає число - вік користувача і повертає true,
 // якщо параметр age більше чи дорівнює 18.
-// В іншому випадку вона запитує підтвердження через confirm 
+// В іншому випадку вона запитує підтвердження через confirm
 // і повертає його результат (true/false).
+
+// function isAdult(age) {
+//   if (age >= 18) {
+//     console.log(true);
+//   } else {
+//     console.log(confirm(`Вам є 18 років?`));
+//   }
+// }
+// console.log(isAdult(17));
 
 // Завдання 10:
 // Напишіть функцію fizzBuzz(num), яка приймає число і перевіряє кожне число від 1 до num:
 // Якщо число ділитися  без остачі на 3 - виводить в консоль 'fizz',
 // якщо ділиться  без остачі на 5 - виводить в консоль 'buzz',
 // якщо ділиться  без остачі і на 3, і на 5 - виводить в консоль 'fizzbuzz'.
+
+function fizzBuzz(num) {
+  for (let i = 1; i <= num; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      console.log(`${i} = fizzbuzz`);
+    } else if (i % 3 === 0) {
+      console.log(`${i} = fizz`);
+    } else if (i % 5 === 0) {
+      console.log(`${i} = buzz`);
+    }
+  }
+}
+fizzBuzz(20);
+
+// Напишіть цикл який пропонує ввести число більше 100 через prompt.
+// Якщо користувач ввів інше число - попросити ввести ще раз.
+// Цикл повинен питати число, доки користувач не введе число більше 100,
+// чи не натисне кнопку Cancel в prompt.
+
+let number = Number(prompt(`Введіть число більше 100:`));
+while (number < 100) {
+  number = Number(prompt(`Введіть число ще раз`));
+}
+console.log(number || `Error`);
