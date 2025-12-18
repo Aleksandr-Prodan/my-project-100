@@ -193,8 +193,8 @@ fizzBuzz(20);
 // Цикл повинен питати число, доки користувач не введе число більше 100,
 // чи не натисне кнопку Cancel в prompt.
 
-let number = Number(prompt(`Введіть число більше 100:`));
-while (number < 100) {
-  number = Number(prompt(`Введіть число ще раз`));
-}
-console.log(number || `Error`);
+// let number = Number(prompt(`Введіть число більше 100:`));
+// while (number < 100) {
+//   number = Number(prompt(`Введіть число ще раз`));
+// }
+// console.log(number || `Error`);
